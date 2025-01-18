@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大角度單擺相圖模擬test</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>大角度單擺相圖模擬</h2>
-        <h3 class="subtitle">網站製作：楊予凱 台大機械一B13502059</h3>
-        <label for="lengthInput">擺長 L (m):</label>
-        <input type="number" id="lengthInput" placeholder="擺長 (m)" step="0.01">
-        <label for="timeStepInput">步長 h (sec):</label>
-        <input type="number" id="timeStepInput" placeholder="步長 (sec)" step="0.01">
-        <label for="angleInput">初始擺角 θ (°):</label>
-        <input type="number" id="angleInput" placeholder="初始擺角 (°)" step="0.1">
-        <label for="initialOmegaInput">初始角速度 ω₀ (°/sec):</label>
-        <input type="number" id="initialOmegaInput" placeholder="初始角速度 (°/sec)" step="0.01">
-        <button onclick="calculatePendulum()">計算擺錘運動</button>
-        <h3>結果:</h3>
-        <p id="result">計算結果將顯示在此處。</p>
-        <canvas id="pendulumChart"></canvas>
-        <canvas id="phaseChart"></canvas>
+
+
+  <div id="calculator">
+    <input id="display" readonly>
+    <div id="keys">
+      <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('*')" class="operator-btn">*</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="clearDisplay()" class="operator-btn">C</button>
     </div>
-    <script src="script.js"></script>
+  </div>
+
+
+  <script src="index.js"></script>
 </body>
-</html>
